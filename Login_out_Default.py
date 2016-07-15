@@ -3,14 +3,12 @@
 #  Login and Logout with Default Web Pages
 #
 ###############################################################################
-f = open('/proc/self/ns_id', 'w')
-f.write('2\n')
-f.close()
+###
 import urllib2, base64
 import time
-request1 = urllib2.Request("http://10.1.1.1/login")
-request = urllib2.Request("http://10.1.1.1/hello")
-request2 = urllib2.Request("http://20.1.1.1/goodbye")
+request1 = urllib2.Request("<url>")
+request = urllib2.Request("<url>")
+request2 = urllib2.Request("<url>")
 basestr = base64.encodestring('%s:%s' % ("admin2", "admin2")).replace('\n',' ')
 request.add_header("Authorization", "Basic %s" % basestr)
 request1.add_header("Authorization", "Basic %s" % basestr)
