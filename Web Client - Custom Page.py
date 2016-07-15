@@ -4,19 +4,17 @@
 #
 # Added : Custom Page Simulation - DNS Resolving
 ######################################################################################
-f = open('/proc/self/ns_id', 'w')
-f.write('2\n')
-f.close()
+###
 import urllib2, base64
 import urllib, time
 import ctypes
 libc = ctypes.cdll.LoadLibrary('libc.so.6')
 res_init = libc.__res_init
 res_init()
-request1 = urllib2.Request("http://network-access.com")
-request3 = urllib2.Request("http://network-access.com/login")
-request = urllib2.Request("http://network-access.com/hello")
-request2 = urllib2.Request("http://network-access.com/goodbye")
+request1 = urllib2.Request("<url>")
+request3 = urllib2.Request("<url>")
+request = urllib2.Request("<url>")
+request2 = urllib2.Request("<url>")
 values = {'extremenetloginuser' : 'admin3',
           'extremenetloginpassword' : 'admin2',
           }
